@@ -1,9 +1,9 @@
 package junsulime.androidtutorial.splash
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import junsulime.androidtutorial.R
-import kotlinx.android.synthetic.main.activity_splash.*
+import junsulime.androidtutorial.sign.SignActivity
 
 class SplashActivity: AppCompatActivity() {
 
@@ -11,13 +11,6 @@ class SplashActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
-
-        textView.text = number.toString()
-
-        incrementButton.setOnClickListener {
-            number++
-            textView.text = number.toString()
-        }
+        startActivity(Intent(this, SignActivity::class.java))
     }
 }

@@ -4,14 +4,14 @@ import junsulime.androidtutorial.common.DefaultPrefHelper
 import okhttp3.Interceptor
 import okhttp3.Response
 
-const val API_PREFERENCE = "api_preference"
+const val COOKIE_PREFERENCE = "api_preference"
 
 class AddCookiesInterceptor: Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         val builder = chain.request().newBuilder()
 
         // Get cookie from shared preference
-        val cookies = DefaultPrefHelper.instance().getStringSet(API_PREFERENCE)
+        val cookies = DefaultPrefHelper.instance().getStringSet(COOKIE_PREFERENCE)
         for (cookie in cookies) {
             builder.addHeader("Cookie", cookie.toString())
         }
@@ -31,7 +31,7 @@ class ReceivedCookiesInterceptor: Interceptor {
         }
 
         // Set cookie to shared preferences
-        DefaultPrefHelper.instance().setStringSet(API_PREFERENCE, cookies.toSet())
+        DefaultPrefHelper.instance().setStringSet(COOKIE_PREFERENCE, cookies.toSet())
         return response
     }
 }

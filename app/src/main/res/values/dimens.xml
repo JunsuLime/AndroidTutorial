@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="sign_width">250dp</dimen>
+    <dimen name="home_post_button_margin">24dp</dimen>
 </resources>

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
+import junsulime.androidtutorial.R
 import junsulime.androidtutorial.api.postApi
 import junsulime.androidtutorial.common.DefaultPrefHelper
 import junsulime.androidtutorial.models.HomeResponse
@@ -17,14 +18,21 @@ class HomeActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_home)
 
         postApi.home(0).enqueue(object : Callback<HomeResponse> {
             override fun onResponse(call: Call<HomeResponse>, response: Response<HomeResponse>) {
+                if (response.code() != 200) {
+                    TODO("Handle error case")
+                    return
+                }
                 val user = response.body()?.user
                 if (user == null) {
                     signOut()
                     return
                 }
+
+
                 Toast.makeText(this@HomeActivity, "user name: ${response.body()?.user?.name ?: "No User"}", Toast.LENGTH_SHORT).show()
             }
 
@@ -39,4 +47,6 @@ class HomeActivity: AppCompatActivity() {
         startActivity(Intent(this, SignActivity::class.java))
         finish()
     }
+
+
 }

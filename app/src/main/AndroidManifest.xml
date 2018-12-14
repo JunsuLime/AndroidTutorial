@@ -22,5 +22,8 @@
         <activity android:name=".sign.SignActivity">
 
         </activity>
+        <activity android:name=".home.HomeActivity">
+
+        </activity>
     </application>
 </manifest>

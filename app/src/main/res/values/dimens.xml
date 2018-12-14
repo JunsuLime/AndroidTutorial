@@ -2,4 +2,6 @@
 <resources>
     <dimen name="sign_width">250dp</dimen>
     <dimen name="home_post_button_margin">24dp</dimen>
+    <dimen name="post_summary_title">20sp</dimen>
+    <dimen name="post_summary_writer">10sp</dimen>
 </resources>

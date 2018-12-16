@@ -1,6 +1,7 @@
 package junsulime.androidtutorial.api
 
 import junsulime.androidtutorial.models.HomeResponse
+import junsulime.androidtutorial.models.PostUpdateDTO
 import junsulime.androidtutorial.models.User
 import okhttp3.OkHttpClient
 import retrofit2.Call
@@ -20,6 +21,9 @@ interface PostBoardService {
 
     @GET("/home")
     fun home(@Query("page") page: Int): Call<HomeResponse>
+
+    @POST("/posts")
+    fun postOnBoard(@Body post: PostUpdateDTO): Call<PostUpdateDTO>
 
 
     companion object {

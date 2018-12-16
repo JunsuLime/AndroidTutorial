@@ -6,12 +6,15 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import junsulime.androidtutorial.R
 import junsulime.androidtutorial.api.postApi
+import junsulime.androidtutorial.common.DefaultPrefHelper
 import junsulime.androidtutorial.home.HomeActivity
 import junsulime.androidtutorial.models.User
 import kotlinx.android.synthetic.main.activity_sign.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+
+const val SIGN_PREFERENCE = "sign_preference"
 
 class SignActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,6 +45,7 @@ class SignActivity : AppCompatActivity() {
             return
         }
 
+        DefaultPrefHelper.instance().setBoolean(SIGN_PREFERENCE, true)
         startActivity(Intent(this, HomeActivity::class.java))
     }
 }

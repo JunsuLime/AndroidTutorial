@@ -8,16 +8,16 @@ import android.widget.Toast
 import junsulime.androidtutorial.R
 import junsulime.androidtutorial.api.postApi
 import junsulime.androidtutorial.models.PostUpdateDTO
-import kotlinx.android.synthetic.main.activity_post.*
+import kotlinx.android.synthetic.main.activity_post_create.*
 import kotlinx.android.synthetic.main.layout_toolbar.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class PostActivity: AppCompatActivity() {
+class PostCreateActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_post)
+        setContentView(R.layout.activity_post_create)
 
         setSupportActionBar(toolbar)
     }

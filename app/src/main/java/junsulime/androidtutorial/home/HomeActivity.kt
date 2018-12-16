@@ -3,16 +3,13 @@ package junsulime.androidtutorial.home
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutCompat
 import android.support.v7.widget.LinearLayoutManager
 import android.widget.Toast
 import junsulime.androidtutorial.R
 import junsulime.androidtutorial.api.postApi
 import junsulime.androidtutorial.common.DefaultPrefHelper
 import junsulime.androidtutorial.models.HomeResponse
-import junsulime.androidtutorial.models.PostSummary
-import junsulime.androidtutorial.models.User
-import junsulime.androidtutorial.post.PostActivity
+import junsulime.androidtutorial.post.PostCreateActivity
 import junsulime.androidtutorial.sign.SIGN_PREFERENCE
 import junsulime.androidtutorial.sign.SignActivity
 import kotlinx.android.synthetic.main.activity_home.*
@@ -37,7 +34,7 @@ class HomeActivity: AppCompatActivity() {
 
     private fun initHome() {
         postButton.setOnClickListener {
-            startActivity(Intent(this, PostActivity::class.java))
+            startActivity(Intent(this, PostCreateActivity::class.java))
         }
         
         postSummaryList.layoutManager = LinearLayoutManager(this)

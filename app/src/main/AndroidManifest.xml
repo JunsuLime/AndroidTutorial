@@ -28,7 +28,7 @@
         <activity android:name=".home.HomeActivity">
 
         </activity>
-        <activity android:name=".post.PostActivity"
+        <activity android:name=".post.PostCreateActivity"
             android:theme="@style/NoActionTheme">
 
         </activity>

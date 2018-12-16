@@ -28,5 +28,9 @@
         <activity android:name=".home.HomeActivity">
 
         </activity>
+        <activity android:name=".post.PostActivity"
+            android:theme="@style/NoActionTheme">
+
+        </activity>
     </application>
 </manifest>

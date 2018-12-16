@@ -2,4 +2,7 @@
     <string name="app_name">Post Board</string>
     <string name="sign_button">Sign</string>
     <string name="sign_hint">Input your name</string>
+    <string name="post_title">Title</string>
+    <string name="post_contents">Contents</string>
+    <string name="menu_post">Post</string>
 </resources>

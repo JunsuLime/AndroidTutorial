@@ -4,4 +4,7 @@
     <dimen name="home_post_button_margin">24dp</dimen>
     <dimen name="post_summary_title">20sp</dimen>
     <dimen name="post_summary_writer">10sp</dimen>
+    <dimen name="post_summary_card_margin">8dp</dimen>
+    <dimen name="post_summary_card_radius">4dp</dimen>
+    <dimen name="toolbar_elevation">4dp</dimen>
 </resources>

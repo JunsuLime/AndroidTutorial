@@ -1,4 +1,6 @@
 package junsulime.androidtutorial.models
 
-class HomeResponse(val user: User) {
-}
+data class HomeResponse(
+        val user: User,
+        val posts: List<PostSummary>
+)

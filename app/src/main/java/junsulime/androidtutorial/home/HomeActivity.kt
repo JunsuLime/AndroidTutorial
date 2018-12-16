@@ -12,6 +12,7 @@ import junsulime.androidtutorial.common.DefaultPrefHelper
 import junsulime.androidtutorial.models.HomeResponse
 import junsulime.androidtutorial.models.PostSummary
 import junsulime.androidtutorial.models.User
+import junsulime.androidtutorial.post.PostActivity
 import junsulime.androidtutorial.sign.SIGN_PREFERENCE
 import junsulime.androidtutorial.sign.SignActivity
 import kotlinx.android.synthetic.main.activity_home.*
@@ -29,7 +30,16 @@ class HomeActivity: AppCompatActivity() {
         initHome()
     }
 
+    override fun onResume() {
+        super.onResume()
+        requestHome(0)
+    }
+
     private fun initHome() {
+        postButton.setOnClickListener {
+            startActivity(Intent(this, PostActivity::class.java))
+        }
+        
         postSummaryList.layoutManager = LinearLayoutManager(this)
         postSummaryList.adapter = postSummaryAdapter
 
@@ -49,9 +59,9 @@ class HomeActivity: AppCompatActivity() {
                     return
                 }
 
-                postSummaryAdapter.resetPosts(listOf(PostSummary("New Title", User("junsulime"))))
+                postSummaryAdapter.resetPosts(response.body()?.posts ?: listOf())
                 postSummaryAdapter.notifyDataSetChanged()
-                Toast.makeText(this@HomeActivity, "user name: ${response.body()?.user?.name ?: "No User"}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@HomeActivity, "user name: ${response.body()?.user?.name ?: "No User"}, posts: ${response.body()?.posts?.size}", Toast.LENGTH_SHORT).show()
             }
 
             override fun onFailure(call: Call<HomeResponse>, t: Throwable) {
